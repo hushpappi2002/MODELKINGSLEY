@@ -1,0 +1,153 @@
+.puzzle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: auto;
+}
+
+.puzzle-title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.9rem;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.puzzle-grid {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.puzzle-piece {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  background: #f3f3f3;
+  transition:
+    transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.puzzle-piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #f3f3f3;
+}
+
+.puzzle-piece:hover img {
+  transform: scale(1.04);
+  transition: transform 0.45s ease;
+}
+
+.puzzle-rest-0,
+.puzzle-flow-0 {
+  transform: translate(0, 0);
+}
+
+.puzzle-rest-1,
+.puzzle-flow-1 {
+  transform: translate(160px, 0);
+}
+
+.puzzle-rest-2,
+.puzzle-flow-2 {
+  transform: translate(160px, 160px);
+}
+
+.puzzle-rest-3,
+.puzzle-flow-3 {
+  transform: translate(0, 160px);
+}
+
+.puzzle-flow-0 {
+  z-index: 5;
+  opacity: 1;
+  animation: entryPush 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.puzzle-flow-1 {
+  z-index: 4;
+}
+
+.puzzle-flow-2 {
+  z-index: 3;
+}
+
+.puzzle-flow-3 {
+  z-index: 2;
+}
+
+.puzzle-flow-4 {
+  transform: translate(-160px, 160px);
+  opacity: 0;
+  z-index: 1;
+}
+
+@keyframes entryPush {
+  0% {
+    opacity: 0;
+    transform: translate(-160px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .puzzle-grid {
+    width: 260px;
+    height: 260px;
+  }
+
+  .puzzle-piece {
+    width: 130px;
+    height: 130px;
+  }
+
+  .puzzle-rest-0,
+  .puzzle-flow-0 {
+    transform: translate(0, 0);
+  }
+
+  .puzzle-rest-1,
+  .puzzle-flow-1 {
+    transform: translate(130px, 0);
+  }
+
+  .puzzle-rest-2,
+  .puzzle-flow-2 {
+    transform: translate(130px, 130px);
+  }
+
+  .puzzle-rest-3,
+  .puzzle-flow-3 {
+    transform: translate(0, 130px);
+  }
+
+  .puzzle-flow-4 {
+    transform: translate(-130px, 130px);
+  }
+
+  @keyframes entryPush {
+    0% {
+      opacity: 0;
+      transform: translate(-130px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
