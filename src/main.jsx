@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import GoogleFonts from "./components/GoogleFonts";
 import KingsleyPortfolio from "./pages/home.jsx";
 import AboutPage from "./pages/about.jsx";
+import PortfolioPage from "./pages/portfolio.jsx";
+import ServicePage from "./pages/service.jsx";
 import "./index.css";
 
 function AppRouter() {
@@ -27,7 +29,15 @@ function AppRouter() {
   return (
     <React.StrictMode>
       <GoogleFonts />
-      {normalizedPath === "/about" ? <AboutPage navigateTo={navigateTo} /> : <KingsleyPortfolio navigateTo={navigateTo} />}
+      {normalizedPath === "/about" ? (
+        <AboutPage navigateTo={navigateTo} />
+      ) : normalizedPath === "/portfolio" ? (
+        <PortfolioPage navigateTo={navigateTo} />
+      ) : normalizedPath === "/services" ? (
+        <ServicePage navigateTo={navigateTo} />
+      ) : (
+        <KingsleyPortfolio navigateTo={navigateTo} />
+      )}
     </React.StrictMode>
   );
 }

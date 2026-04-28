@@ -6,9 +6,9 @@ import heightCombiImg from "../../assets/heightcombi.png";
 import heightForwardImg from "../../assets/heightfoward.png";
 
 const stats = [
-  { value: "6'4\"", sub: "193 cm", label: "Height" },
-  { value: "69", sub: "kg", label: "Weight" },
-  { value: "35.5", sub: "inches", label: "Waist" },
+  { value: "6'2\"", sub: "188 cm", label: "Height" },
+  { value: "73.5", sub: "kg", label: "Weight" },
+  { value: "34", sub: "inches", label: "Waist" },
   { value: "44", sub: "EU", label: "Shoes" },
   { value: "Brown", sub: "-", label: "Eyes" },
 ];

@@ -47,7 +47,7 @@ export default function KingsleyPortfolio({ navigateTo }) {
       <HeroSection scrollTo={scrollTo} />
       <AboutSection scrollTo={scrollTo} navigateTo={navigateTo} />
       <StatsSection />
-      <ExperienceSection scrollTo={scrollTo} />
+      <ExperienceSection scrollTo={scrollTo} navigateTo={navigateTo} />
       <ServicesSection />
       <ContactSection />
       <Footer navLinks={navLinks} scrollTo={scrollTo} navigateTo={navigateTo} />

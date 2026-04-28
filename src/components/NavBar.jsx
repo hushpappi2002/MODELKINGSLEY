@@ -17,12 +17,18 @@ export default function NavBar({ navScrolled, activeSection, navLinks, scrollTo,
         </span>
       </div>
 
-      <div style={{ display: "flex", gap: "40px" }} className="desktop-nav">
-        {navLinks.map((link) => (
+      <div style={{ display: "flex", gap: "36px", alignItems: "center" }} className="desktop-nav">
+        {navLinks.filter((link) => link.id !== "services").map((link) => (
           <span key={link.id} onClick={() => scrollTo(link.id)} className={`nav-link ${activeSection === link.id ? "active" : ""}`}>
             {link.label}
           </span>
         ))}
+        <span onClick={() => navigateTo("/services")} className={`nav-link ${activeSection === "services" ? "active" : ""}`}>
+          Services
+        </span>
+        <span onClick={() => navigateTo("/portfolio")} className={`nav-link ${activeSection === "portfolio" ? "active" : ""}`}>
+          Portfolio
+        </span>
       </div>
 
       <a href="mailto:denniskingsley5@gmail.com" className="btn-outline" style={{ fontSize: "9px", padding: "10px 20px" }}>

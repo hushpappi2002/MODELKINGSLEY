@@ -10,7 +10,7 @@ const experienceList = [
   { year: "Ongoing", role: "Personal Brand Growth", org: "Fashion, Visual Storytelling, and Social Media Presence" },
 ];
 
-export default function ExperienceSection({ scrollTo }) {
+export default function ExperienceSection({ scrollTo, navigateTo }) {
   return (
     <section id="experience" style={{ padding: "52px 48px", background: "#0d0d0d" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -41,7 +41,7 @@ export default function ExperienceSection({ scrollTo }) {
             <p style={{ fontFamily: "'Montserrat'", fontSize: "16px", fontWeight: 300, lineHeight: 1.65, color: "#999", marginBottom: 18 }}>
               With over five years of experience in modelling, Kingsley has steadily grown within the industry, beginning his journey at <span style={{ color: "#fff", fontWeight: 400 }}>Maseno Models Foundation</span> in <span style={{ color: "#fff", fontWeight: 400 }}>Kisumu</span>. He continues to expand his portfolio in runway and commercial modelling, combining high-fashion expression with consistency, discipline, and professional excellence.
             </p>
-            <button onClick={() => scrollTo("services")} className="btn-outline">View Services</button>
+            <button onClick={() => navigateTo("/services")} className="btn-solid">View Services</button>
           </AnimBlock>
 
           <AnimBlock animation="fade-right">
